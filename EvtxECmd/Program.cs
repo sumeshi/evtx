@@ -43,7 +43,7 @@ namespace EvtxECmd;
 
         private static string _activeDateTimeFormat;
         
-        private static readonly string BaseDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        private static readonly string BaseDirectory = AppContext.BaseDirectory;
 
         private static Dictionary<string, int> _errorFiles;
         private static int _fileCount;
