@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -54,12 +54,12 @@ jobs:
       # Enable only after verifying build artifacts.
       # Also change permissions.contents to write.
       #
-      # - name: Create GitHub Release
-      #   env:
-      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   run: |
-      #     gh release create "linux-${{ github.run_number }}" \
-      #       EvtxECmd-linux-x64.tar.gz \
-      #       --target "${{ github.sha }}" \
-      #       --title "EvtxECmd Linux (Unofficial)" \
-      #       --notes "Unofficial Linux x64 build of EvtxECmd."
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "linux-${{ github.run_number }}" \
+            EvtxECmd-linux-x64.tar.gz \
+            --target "${{ github.sha }}" \
+            --title "EvtxECmd Linux (Unofficial)" \
+            --notes "Linux x64 build of EvtxECmd."
