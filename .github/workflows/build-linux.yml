@@ -63,5 +63,5 @@ jobs:
           gh release create "linux-${{ github.run_number }}" \
             EvtxECmd-linux-x64.tar.gz \
             --target "${{ github.sha }}" \
-            --title "EvtxECmd Linux (Unofficial)" \
-            --notes "Linux x64 build of EvtxECmd."
+            --title "linux" \
+            --notes "Unofficial Linux x64 build of EvtxECmd."
